@@ -1,0 +1,280 @@
+/*--------------wspólne--------------*/
+html{
+    background-color: bisque;
+}
+
+
+.glowny{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.buttons{
+    width: 50%;
+    height: 15%;
+    background-color: aqua;
+}
+.buttons button{
+    margin-left: 3px;
+    position: relative;
+    top: 25%;
+    background-color: chartreuse;
+    border: 0px;
+    height: 60px;
+    width: 150px;
+    transition: all 0.3s;
+    border-radius: 5%;
+}
+.buttons button:hover{
+    background-color: rgb(130, 231, 30);
+    cursor: pointer;
+    transform: scale(1.06);
+}
+
+.tytul{
+    width: 50%;
+    height: 15%;
+    background-color: chartreuse;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.kwadrat1{
+    width: 50%;
+    height: 100%;
+    background-color: bisque;
+}
+.kwadrat2{
+    width: 50%;
+    height: 100%;
+    background-color: cornflowerblue;
+}
+
+#zmiana_strony {
+    display: flex;
+    width: 100%;
+    height: 85%;
+}
+
+.pasek{
+    background-color: darkturquoise;
+    height: 20px;
+    padding: 2px;
+}
+/*---------------------------------*/
+
+/*--------------index--------------*/
+.randomtext{
+    width: 170px;
+    height: 70px;
+    background-color: rgb(161, 154, 90);
+    position: absolute;
+    top: 50%;
+    color: aliceblue;
+    rotate: -20deg;
+}
+
+.kloc1{
+    position: relative;
+    width: 10%;
+    height: 10%;
+    background-color: blue;
+    animation: move1 7s linear, kolor 7s step-start 2.5s;
+}
+@keyframes move1 {
+    0%{left: 0; top: 0;}
+    25%{left: 90%; top: 0;}
+    50%{left: 90%; top: 90%;}
+    75%{left: 0; top: 90%;}
+    100%{left: 0; top: 0;}
+}
+
+.kloc2{
+    position: relative;
+    width: 10%;
+    height: 10%;
+    background-color: blue;
+    animation: move2 7s linear, kolor 7s step-start 2.5s;
+}
+@keyframes move2 {
+    0%{left: 0; top: 0;}
+    25%{left: 90%; top: 0;}
+    50%{left: 90%; top: 90%;}
+    75%{left: 0; top: 90%;}
+    100%{left: 0; top: 0;}
+}
+
+@keyframes kolor {
+    0%{background-color: blue;}
+    50%{background-color: red;}
+    100%{background-color: blue;}
+}
+
+.div_kwa1{
+    height: 8%;
+}
+
+.div_kloc1{
+    height: 92%;
+}
+/*---------------------------------*/
+
+/*--------------kalendarz--------------*/
+.dni div{
+    width: 32%;
+    border: 2px black dotted;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.dni{
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dni_center{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.d1, .d4{
+    margin-right: 10px;
+    background-color: cornflowerblue;
+}
+.d7{
+    margin-right: 10px;
+    background-color: palevioletred;
+}
+.d10{
+    margin-right: 10px;
+    background-color: khaki;
+}
+.d13{
+    margin-right: 10px;
+    background-color: lightblue;
+}
+
+.d2, .d14{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: khaki;
+}
+.d5, .d8{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: azure;
+}
+.d11{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+}
+
+.d3{
+    margin-left: 10px;
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    background-color: cornflowerblue;
+}
+.d6{
+    margin-left: 10px;
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    background-color: khaki;
+}
+.d9{
+    margin-left: 10px;
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    background-color: crimson;
+}
+.d12{
+    margin-left: 10px;
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    background-color: cadetblue;
+}
+.d15{
+    margin-left: 10px;
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    background-color: palevioletred;
+}
+/*---------------------------------*/
+
+/*--------------galeria--------------*/
+.galeria{
+    display: flex;
+    justify-content: center;
+}
+
+.img_drzewo{
+    transition: all 0.2s;
+}
+.img_drzewo:hover{
+    rotate: -30deg;
+}
+/*---------------------------------*/
+
+
+/*--------------panel--------------*/
+.h2{
+    color: red;
+}
+
+.load{
+    display: flex;
+    justify-content: center;
+}
+
+.kloc_portal{
+    position: relative;
+    background-color: crimson;
+    width: auto;
+    height: 8%;
+    animation: portal 2s;
+    /*animation-iteration-count: infinite;*/
+}
+@keyframes portal {
+    0%{top: 0%;}
+    50%{top: 92%;}
+    100%{top: 0%;}
+}
+.portal_box{
+    top: 15%;
+    right: 50%;
+    position: absolute;
+    height: 100%;
+    width: 100px;
+}
+
+.pogoda{
+    color: red;
+    display: flex;
+    justify-content: center;
+}
+
+.portal_kwadrat2{
+    background-color: bisque;
+    height: 100%;
+}
+
+
+/*---------------------------------*/
