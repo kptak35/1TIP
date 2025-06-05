@@ -1,0 +1,63 @@
+Wszystkie komendy wpisywane w terminalu linuxa wklejaj do tego pliku.
+
+1. Uruchom WSL
+2. Wyświetl bieżący folder i jeżeli nie jesteś w folderze domowym /home/student/ to przejdź do folderu domowego użytkownika
+3. Utwórz folder Sprawdzian_XX gdzie XX to twoje inicjały
+4. Przejdź do folderu Sprawdzian_XX
+5. Utwórz foldery Jpolski, Matematyka, Fizyka, Chemia
+6. W folderze Jpolski utwórz folder Lektury a nim foldery PanTadeusz, Kordian
+7. W folderze Sprawdzian_XX utwórz plik oceny.txt i wpisz do niego oceny "5, 3, 2, 4"
+8. W folderze Sprawdzian_XX utwórz plik zachowanie.txt i wpisz do niego "wz, ng, wz"
+9. Wyświetl zawartość folderu Sprawdzian_XX wraz elementami ukrytymi oraz z prawami dostępu
+10. Dodaj prawo "Execute" i "Write" do folderu Jpolski dla pozostałych użytkowników - zapis literowy
+11. Odejmij prawo "Write" dla użytkownika i członków grupy do folderu Matematyka - zapis literowy
+12. Dodaj prawo "Write" do folderu Fizyka dla użytkownika, członków grupy i pozostałych użytkowników - jedną komendą, zapis literowy
+13. Ustaw prawa (zapis cyfrowy) do pliku oceny.txt w następujący sposób:
+	- użytkownika wszystkie prawa
+	- grupa prawo odczytu i wykonywania
+	- pozostali - prawo odczytu
+14. Ustaw prawa (zapis cyfrowy) do foldery Jpolski/PanTadeusz oceny.txt w następujący sposób:
+	- użytkownika prawo odczytu i zapisu
+	- grupa prawo odczytu i zapisu
+	- pozostali - prawo odczytu i wykonywania
+15. Zmień właściciela pliku oceny.txt na root
+16. Zmień grupę dla folderu Fizyka na staff
+
+
+mkdir Sprawdzian_kp
+
+cd Sprawdzian_kp
+
+mkdir Jpolski
+mkdir Matematyka
+mkdir Fizyka 
+mkdir Chemia
+
+cd Jpolski
+mkdir Lektury
+cd Lektury
+mkdir PanTadeusz
+mkdir Kordian
+
+cd ~
+cd Sprawdzian_kp
+echo "5, 3, 2, 4" > oceny.txt
+
+echo "wz, ng, wz" > zachowanie.txt
+
+ls -la
+
+chmod o+wx Jpolski
+
+chmod ug-w Matematyka
+
+chmod a+w Fizyka
+
+chmod 764 oceny.txt
+
+chmod 665 oceny.txt
+chmod 665 Jpolski/Lektury/PanTadeusz
+
+sudo chown root oceny.txt
+
+sudo chgrp staff Fizyka

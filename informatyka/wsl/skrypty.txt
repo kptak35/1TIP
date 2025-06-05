@@ -1,0 +1,38 @@
+cat > skrypt1.sh - tworzy skrypt
+#!/bin/bash - zaczynamy nim komende
+ctrl + c - kończy skrypt (po enterze w ostatniej linii)
+
+cat skrypt1.sh - pokazuje zawartość skryptu
+nano skrypt1.sh - edytuje skrypt
+
+bash skrypt1.sh - wykonuje skrypt
+
+---------------------------
+cat >  skrypt2.sh
+
+#!/bin/bash
+echo "Podaj swoje imię: "
+read imie
+echo "Podane imię to: "$imie
+^C
+---------------------------
+cat > skrypt3.sh
+
+#!/bin/bash
+echo "Nazwa skryptu: "$0
+echo "Parametr 1: "$1
+echo "Parametr 2: "$2
+echo "Wszystkie parametry: "$*
+echo "Liczba parametrów: "$#
+^C
+
+-------
+bash skrypt3.sh 78 Tomek 34
+       parametry^
+---------------------------
+cat > skrypt4.sh
+
+#!/bin/bash
+echo "Cześć "$1
+^C
+---------------------------

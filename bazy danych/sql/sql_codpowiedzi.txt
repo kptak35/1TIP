@@ -1,0 +1,33 @@
+SELECT * FROM `customers`;
+SELECT `CustomerID`, `CompanyName`, `ContactName` FROM `customers` ORDER BY `CompanyName`;
+SELECT `ProductName`, `UnitPrice` FROM `products` ORDER BY `UnitPrice` DESC;
+SELECT `OrderID`, `OrderDate`, `ShipCountry` FROM `orders` ORDER BY `OrderDate`;
+SELECT `EmployeeID`,`LastName`, `FirstName`  FROM `employees` ORDER BY `LastName`;
+SELECT `SupplierID`, `CompanyName`, `ContactName` FROM `suppliers` ORDER BY `Country`, `CompanyName`;
+SELECT `CategoryID`, `CategoryName`, `Description` FROM `categories`;
+SELECT `ShipperID`, `CompanyName` FROM `shippers`;
+SELECT `OrderID`, `Freight` FROM `orders` WHERE `Freight` > 100;
+SELECT `ProductName`, `UnitsInStock` FROM `products` WHERE `UnitsInStock` < 20;
+SELECT `CustomerID`, `CompanyName` FROM `customers` WHERE `Country` = "Germany";
+SELECT `OrderID`, `OrderDate` FROM `orders` WHERE `OrderDate` > '1997-01-01' AND `OrderDate` < '1997-12-31';
+SELECT `EmployeeID`, `LastName` FROM `employees` WHERE `Title` = 'Sales Representative';
+SELECT `ProductName`, `UnitPrice` FROM `products` WHERE `UnitPrice` > 50;
+SELECT `SupplierID`, `CompanyName` FROM `suppliers` WHERE `Country` = 'USA';
+SELECT `CategoryID`, `CategoryName` FROM `categories` WHERE `CategoryName` LIKE 'B%';
+SELECT `ShipperID`, `CompanyName` FROM `shippers` WHERE `CompanyName` LIKE '%Express%';
+SELECT `OrderID`, `ShipCity` FROM `orders` WHERE `ShipCity` = 'London';
+SELECT `ProductName`, `UnitsOnOrder` FROM `products` WHERE `UnitsOnOrder` > 0;
+SELECT `CustomerID`, `CompanyName` FROM `customers` WHERE `Region` IS NULL;
+
+INSERT INTO customers (`CompanyName`, `ContactName`, `ContactTitle`, `Address`, `City`, `PostalCode`, `Country`, `Phone`, `Fax`) VALUES ("Bon app2", "Ireneusz Majda", "Owner", "13, rue des Bouchers", "Marseille", "13008", "France", "91.24.45.41", "91.24.45.42");
+INSERT INTO products (`ProductName`, `SupplierID`, `CategoryID`, `QuantityPerUnit`, `UnitPrice`, `UnitsInStock`, `UnitsOnOrder`, `ReorderLevel`, `Discontinued`) VALUES ("irek", 14, 1, "550 ml bottles", "2.0000", 0, 0, 0, 0);
+INSERT INTO employees (`LastName`, `FirstName`, `Title`, `TitleOfCourtesy`, `BirthDate`, `HireDate`, `Address`, `City`, `Region`, `PostalCode`, `Country`, `HomePhone`, `Extension`, `Photo`, `Notes`, `ReportsTo`, `PhotoPath`, `Salary`) VALUES ("majda", "ireneusz", "Sales Representative", "Mrs", "1964-02-29 00:00:00", "1939-08-30 00:00:00", "721 Moss Bay Blvd", "Kirkland", "WA", "98401", "USA", "(206) 555-3412", "3353", "[BLOB - 11.8 KB]", "irek has a BS degree in chemistry from Boston Col...", 2, "http://accweb/emmployees/leverling.bmp", 234);
+
+
+
+
+
+
+
+
+

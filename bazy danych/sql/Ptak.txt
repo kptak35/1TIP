@@ -1,0 +1,28 @@
+CREATE DATABASE szkola;
+
+
+CREATE TABLE uczniowie(
+ id int,
+ imie varchar(30),
+ nazwisko varchar(50) 
+);
+
+
+CREATE TABLE nauczyciele(
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    imie varchar(30),
+    nazwisko varchar(50)
+);
+
+
+CREATE TABLE oceny(
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id_nauczyciel int NOT NULL,
+    id_uczen int NOT NULL,
+    ocena int NOT NULL
+);
+
+
+ALTER TABLE uczniowie ADD COLUMN nr_legit varchar(20);
+ALTER TABLE uczniowie ADD COLUMN miejscowosc varchar(40) DEFAULT 'Kraków';
+ALTER TABLE uczniowie MODIFY COLUMN nazwisko varchar(60);

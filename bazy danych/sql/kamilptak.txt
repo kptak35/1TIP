@@ -1,0 +1,46 @@
+1. Znajdź różne kraje, z których pochodzą klienci. **(Tabela: Customers)**
+2. Znajdź różne kraje i miasta wysyłki zamówień, posortowane alfabetycznie. **(Tabela: Orders)**
+3. Wyświetl imiona i nazwiska pracowników z nazwami kolumn "First Name" i "Last Name". **(Tabela: Employees)**
+4. Wyświetl pierwsze 10 zamówień. **(Tabela: Orders)**
+5. Wybierz pięć najdroższych produktów. **(Tabela: Products)**
+6. Wybierz pięć najtańszych produktów. **(Tabela: Products)**
+7. Wybierz trzy produkty czekoladowe, których jest najwięcej w magazynie. **(Tabela: Products)**
+8. Wyświetl ceny produktów, poziom zniżki i ceny uwzględniające zniżkę dla wszystkich pozycji zamówień, którym zniżka została przyznana. **(Tabela: Order Details)**
+9. Wyświetl imiona, nazwiska oraz miasta pochodzenia klientów w formie "osoba z miasto". **(Tabela: Customers)**
+10. Podaj liczbę pracowników z USA. **(Tabela: Employees)**
+11. Wyświetl średnią przyznaną zniżkę dla pozycji zamówień, dla których ją przyznano. **(Tabela: Order Details)**
+12. Podaj liczbę sprzedanych produktów (jednostek). **(Tabela: Order Details)**
+13. Wyświetl informacje o najdroższym produkcie. **(Tabela: Products)**
+14. Wybierz nazwy oraz informacje o stanie magazynowym dla produktów dostarczanych przez firmę 'Norske Meierier'. **(Tabela: Products, Suppliers)**
+15. Wyświetl maksymalną, minimalną, średnią i sumaryczną wartość produktów, które są w magazynie. **(Tabela: Products)**
+16. Podaj maksymalną cenę produktu dla produktów o cenach poniżej 18$. **(Tabela: Products)**
+17. Podaj wartość zamówienia o numerze 10252, uwzględniając zniżki. **(Tabela: Order Details)**
+18. Podaj liczbę sprzedanych produktów z kategorii Beverages. **(Tabela: Order Details, Products, Categories)**
+19. Wyświetl średnią cenę produktów z kategorii ID=3. **(Tabela: Products)**
+20. Wyświetl liczbę produktów o cenie powyżej średniej. **(Tabela: Products)**
+
+
+
+1. SELECT DISTINCT `Country` FROM `customers`;
+2. SELECT DISTINCT `ShipCountry`, `ShipCity` FROM `orders`;
+3. SELECT `FirstName` AS "First Name", `LastName` AS "Last Name" FROM `employees`;
+4. SELECT * FROM `orders` LIMIT 10;
+5. SELECT * FROM `products` ORDER BY `UnitPrice` DESC LIMIT 5;
+6. SELECT * FROM `products` ORDER BY `UnitPrice` LIMIT 5;
+7. SELECT * FROM `products` WHERE `CategoryID` = (SELECT `CategoryID` FROM `categories` WHERE `CategoryName` = "Confections") ORDER BY `UnitsInStock` DESC LIMIT 3;
+8. SELECT `UnitPrice`, `Discount`, `UnitPrice` * (1-`Discount`/100) FROM `order details` WHERE `Discount` > 0;
+9. SELECT `ContactName`, `City` AS "Osoba z miasto" FROM `customers`;
+10. SELECT COUNT(*) FROM `employees` WHERE Country = "USA";
+11. SELECT AVG(`Discount`) FROM `order details` WHERE `Discount` > 0;
+12.
+13. SELECT * FROM `products` ORDER BY `UnitPrice` DESC LIMIT 1;
+14. SELECT `ProductName`, `UnitsInStock` FROM `products` WHERE `SupplierID` = (SELECT `SupplierID` FROM suppliers WHERE CompanyName = "Norske Meierier");
+15. SELECT MAX(`UnitPrice`), MIN(`UnitPrice`), AVG(`UnitPrice`), (AVG(`UnitsInStock`) / COUNT(*)) FROM `products` WHERE `UnitsInStock` > 0;
+16. SELECT MAX(`UnitPrice`) FROM `products` WHERE `UnitPrice` < 18;
+17.SELECT `UnitPrice` * (1-`Discount`/100) FROM `order details` WHERE `OrderID` = 10252;
+18. 
+19. SELECT AVG(`UnitPrice`) FROM `products` WHERE `CategoryID` = 3;
+20. SELECT COUNT(*) FROM `products` WHERE `UnitPrice` > (SELECT AVG(`UnitPrice`) FROM `products`);
+
+
+

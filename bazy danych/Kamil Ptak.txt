@@ -1,0 +1,71 @@
+-- Polecenia SELECT:
+
+1. Napisz zapytanie, które wyświetli `ProductID` i `ProductName` z tabeli `Products`, gdzie `Discontinued` jest równe 0.
+SELECT `ProductID`, `ProductName` FROM `products` WHERE `Discontinued` = 0;
+
+2. Napisz zapytanie, które wyświetli `OrderID`, `CustomerID` i `EmployeeID` z tabeli `Orders`, gdzie `ShipCountry` jest równe 'France'.
+SELECT `OrderID`, `CustomerID`, `EmployeeID` FROM `orders` WHERE `ShipCountry` = "France";
+
+3. Napisz zapytanie, które wyświetli `SupplierID`, `CompanyName` i `ContactTitle` z tabeli `Suppliers`, gdzie `City` jest równe 'Tokyo'.
+SELECT `SupplierID`, `CompanyName`, `ContactTitle` FROM `suppliers` WHERE `City` = "Tokyo";
+
+4. Napisz zapytanie, które wyświetli `CategoryID` i `CategoryName` z tabeli `Categories`, gdzie `CategoryName` zawiera 'Food'.
+
+
+5. Napisz zapytanie, które wyświetli `EmployeeID`, `FirstName` i `LastName` z tabeli `Employees`, gdzie `BirthDate` jest wcześniejsza niż '1960-01-01'.
+SELECT `EmployeeID`, `FirstName`, `LastName` FROM `employees` WHERE `BirthDate` < "1960-01-01";
+
+6. Napisz zapytanie, które wyświetli `CustomerID`, `CompanyName` i `City` z tabeli `Customers`, gdzie `City` jest równe 'Berlin' lub 'London'.
+SELECT `CustomerID`, `CompanyName`, `City` FROM `customers` WHERE `City` = "Berlin" OR `City` = "London";
+
+7. Napisz zapytanie, które wyświetli `OrderID`, `ShipName` i `ShipAddress` z tabeli `Orders`, gdzie `ShipPostalCode` nie jest NULL.
+SELECT `OrderID`, `ShipName`, `ShipAddress` FROM `orders` WHERE `ShipPostalCode` IS NOT NULL;
+
+8. Napisz zapytanie, które wyświetli `ProductName` i `QuantityPerUnit` z tabeli `Products`, gdzie `QuantityPerUnit` zawiera 'box'.
+
+
+9. Napisz zapytanie, które wyświetli `EmployeeID`, `FirstName` i `LastName` z tabeli `Employees`, gdzie `HireDate` jest późniejsza niż '1995-01-01'.
+SELECT `EmployeeID`, `FirstName`, `LastName` FROM `employees` WHERE `HireDate` > "1995-01-01";
+
+10. Napisz zapytanie, które wyświetli `CustomerID`, `CompanyName` i `Phone` z tabeli `Customers`, gdzie `Phone` zaczyna się od '(503)'.
+
+
+
+-- Polecenia INSERT:
+
+1. Dodaj nowego klienta do tabeli `Customers`.
+INSERT INTO `customers` (`CustomerID`, `CompanyName`, `ContactName`, `ContactTitle`, `Address`, `City`, `Region`, `PostalCode`, `Country`, `Phone`, `Fax`) VALUES ("DSAF", "Antonio Moreno Taquera2", "Jan Kowalski", "Owner", "Obere Str. 53", "Berlin", "BC", "12209", "Germany", "(5) 555-4727", "030-0076545");
+
+2. Dodaj nowy produkt do tabeli `Products`.
+INSERT INTO `products` (`ProductName`, `SupplierID`, `CategoryID`, `QuantityPerUnit`, `UnitPrice`, `UnitsInStock`, `UnitsOnOrder`, `ReorderLevel`, `Discontinued`) VALUES ("jajko", 4, 3, "10 boxes", "97.0000", 200, 5, 6, 0);
+
+3. Dodaj nowego pracownika do tabeli `Employees`.
+INSERT INTO `employees` (`LastName`, `FirstName`, `Title`, `TitleOfCourtesy`, `BirthDate`, `HireDate`, `Address`, `City`, `Region`, `PostalCode`, `Country`, `HomePhone`, `Extension`, `Photo`, `Notes`, `ReportsTo`, `PhotoPath`, `Salary`) VALUES ("Majda", "Ireneusz", "Sales Representative", "Mrs.", "1952-02-19 00:00:00", "1992-08-14 00:00:00", "507 - 20th Ave. E.Apt. 2A", "Tacoma", "WA", "98401", "USA", "(206) 555-9484", 3457, "[BLOB - 12.0 KB]", "Education includes a BA in psychology from Colorad", 2, "http://accweb/emmployees/fuller.bmp", "2100.5");
+
+4. Dodaj nowego dostawcę do tabeli `Suppliers`.
+INSERT INTO `suppliers` (`CompanyName`, `ContactName`, `ContactTitle`, `Address`, `City`, `Region`, `PostalCode`, `Country`, `Phone`, `Fax`, `HomePage`) VALUES ("Exotic Liquids", "Charlotte Cooper", "Purchasing Manager", "49 Gilbert St.", "London", "LA", 70117, "UK", "(100) 555-4823", "(313) 555-6349", "#CAJUN.HTM#");
+
+5. Dodaj nową kategorię do tabeli `Categories`.
+INSERT INTO `categories` (`CategoryName`, `Description`, `Picture`) VALUES ("Produce2", "Prepared meats3", "[BLOB - 9.5 KB]");
+
+-- Polecenia UPDATE:
+
+1. Zaktualizuj nazwę firmy (ustaw nazwę Kompania cukrowa) klienta o `CustomerID` 'ALFKI'.
+UPDATE `customers` SET `CompanyName` = "Kompania cukrowa" WHERE `CustomerID` = "ALFKI";
+
+2. Zaktualizuj cenę produktu (ustaw 20) o `ProductID` 1.
+UPDATE `products` SET `UnitPrice` = 20 WHERE `ProductID` = 1;
+
+3. Zaktualizuj tytuł pracownika (ustaw Regional Manager) o `EmployeeID` 5.
+UPDATE `employees` SET `Title` = "Regional Manager" WHERE `EmployeeID` = 5;
+
+4. Zaktualizuj kraj dostawcy (Canada) o `SupplierID` 2.
+UPDATE `suppliers` SET `Country` = "Canada" WHERE `SupplierID` = 2;
+
+5. Zaktualizuj opis kategorii (Condiments, sauces, and seasonings) o `CategoryID` 1.
+UPDATE `categories` SET `Description` = "Condiments, sauces, and seasonings" WHERE `CategoryID` = 1;
+
+
+
+
+
