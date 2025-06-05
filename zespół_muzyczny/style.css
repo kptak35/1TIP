@@ -1,0 +1,253 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Raleway';
+    font-weight: normal;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: dimgray
+}
+
+.glowny{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100%;
+}
+
+
+.logo{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(30deg, dimgrey, rgb(161, 161, 161));
+}
+
+.main-main{
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+.main{
+    height: 75%;
+    width: 60%;
+    background: linear-gradient(30deg, dimgrey, rgb(110, 110, 110));
+}
+.zdj{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+    transition: all 0.3s;
+}
+.zdj:hover{
+    transform: scale(1.05);
+}
+
+
+
+.zdje{
+    padding-top: 30px;
+    width: 100px;
+    height: 135px;
+}
+
+.palion{
+    border-radius: 5%;
+    padding: 5px;
+    border: 3px solid black;
+}
+
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 75%;
+    width: 40%;
+    gap: 6%;
+    background: linear-gradient(30deg, rgb(128, 128, 128), rgb(161, 161, 161));
+}
+.menu button{
+    width: 160px;
+    height: 60px;
+    background: linear-gradient(225deg, dimgrey, rgb(122, 122, 122));
+    border-radius: 10px;
+    border: none;
+    transition: all 0.3s;
+    font-size: medium;
+}
+.menu button:hover{
+    background: linear-gradient(225deg, rgb(122, 122, 122), dimgrey);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.menu button:active{
+    transform: scale(1);
+}
+
+.stopka{
+    padding: 2px;
+    gap: 10px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    width: 100%;
+    height: 10%;
+    background: linear-gradient(30deg, dimgrey, rgb(161, 161, 161));
+}
+
+.stopka img{
+    margin-left: 5px;
+}
+
+.text1{
+    text-shadow: 2px 2px #6ce463;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-top: 40px;
+}
+
+
+.hist_text{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 10px;
+    width: 90%;
+    border: 3px solid black;
+    border-radius: 3%;
+    padding: 5px;
+    height: 60%;
+}
+
+
+.men{  
+    text-shadow: 1px 1px #6ce463;
+}
+
+
+.div{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.lista{
+    list-style-type: disc;
+    font-size: 25px;
+    border: 3px solid black;
+    border-radius: 3%;
+    height: fit-content;
+    padding: 7px;
+    padding-left: 26px;
+}
+
+
+
+
+
+
+.fade-out {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.4s, transform 0.4s;
+}
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s, transform 0.4s;
+}
+
+
+
+
+
+.kon_main{
+    display: flex;
+    justify-content: center;
+    border: 3px solid black;
+    border-radius: 3%;
+    padding: 5px;
+    height: 70%;
+    width: 70%;
+}
+
+.kon_main p{
+    font-size: 25px;
+}
+.kon_main img{
+    border-radius: 3%;
+    margin-left: 1%;
+}
+
+
+.tele{
+    display: flex;
+    flex-wrap: wrap;
+    height: 50%;
+    width: 100%;
+    gap: 3%;
+    justify-content: center;
+}
+
+.tele div{
+    border: 3px solid black;
+    padding-top: 7px;
+    border-radius: 5%;
+    text-align: center;
+    font-size: 25px;
+    height: 70%;
+    width: 30%;
+}
+
+.tele_text{
+    font-size: 25px;
+}
+.tele video{
+    border-radius: 5%;
+}
+
+
+.duzelogo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+
+.gal{
+    display: flex;
+    flex-wrap: wrap;
+    height: 50%;
+    width: 100%;
+    gap: 3%;
+    justify-content: center;
+}
+.gal div{
+    width: 30%;
+    height: 55%;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+.gal div:hover{
+    transform: scale(1.35);
+}
+
+.gal img{
+    border-radius: 10%;
+    border: 3px solid black;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+}
