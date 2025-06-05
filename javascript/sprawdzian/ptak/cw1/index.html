@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadania JS z poprzednich egzaminów</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="zadanie">
+
+        <h1>Wymagania dotyczące skryptu:</h1>
+        <ul>
+            <li>Wykonywany po stronie przeglądarki, wywoływany przyciskiem „Prześlij”</li>
+            <li>Skrypt pobiera wartości wprowadzone do pól formularza oraz sprawdza, czy zaznaczone zostało pole
+                wyboru. Jeśli nie, poniżej formularza powinien wyświetlić się w paragrafie (o id="wynik") tekst w kolorze
+                czerwonym, o treści „Musisz zapoznać się z regulaminem”.   
+                Gdy pole wyboru zostanie zaznaczone
+                powinien pojawić się paragraf, który w pierwszej linii wyświetli imię i nazwisko,  poniżej tekst „Treść Twojej sprawy:” i treść wprowadzona do pola Usługa. Na dole tekst o
+                treści „Na podany e-mail zostanie wysłana oferta.”</li>
+                <li>Dodaj walidacje pozostałych pól, jezeli której z pól pozostanie puste, dodaj odpowiedni błąd do paragrafu o id="wynik". Informacja o treści sprawy i wysłaniu oferty ma się pojawić dopiero jak nie będzie zadnych błędów.</li>
+        </ul>
+
+        <h2>Kontakt</h2>
+        <table>
+            <tr>
+                <td>Imię:</td>
+                <td>
+                    <input id="imieForm" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>Nazwisko:</td>
+                <td>
+                    <input id="nazwiskoForm" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>E-mail:</td>
+                <td>
+                    <input id="emailForm" type="email" />
+                </td>
+            </tr>
+            <tr>
+                <td>Usługa</td>
+                <td>
+                    <textarea id="uslugaForm"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <label>
+                        <input id="regulaminCheck" type="checkbox" />
+                        Zapoznałam/em się z regulaminem
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="reset">Resetuj</button>
+                    <button type="button">Prześlij</button>
+                </td>
+            </tr>
+        </table>
+        <p id="wynik"></p>
+    </div>
+    
+<script src="skrypt.js"></script>
+</body>
+
+</html>
