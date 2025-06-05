@@ -1,0 +1,31 @@
+addEventListener - najlepsza metoda
+
+
+document.(obiekt np. images[x] lub body(cała strona).addEventListener("(zdarzenie np. click)", (nazwa funkcji);
+
+lub zamiast nazwy funkcji
+
+, ()=>{
+	(funkcja)
+})
+
+
+Można wstawić (e)=> co pozwala użyć tego w funkcji. e to nazwa zmiennej od event
+Można tego użyć np w:
+
+document.body.addEventListener("keypress", (e)=>{
+	console.log(e);
+})
+Wyświetla wciśnięty klawisz w konsoli
+
+
+
+
+e.key == "x"
+e.code == "KeyX"  (lepsza metoda(?))
+x - dowolna litera
+
+warunek wykrywający wciśnięty przycisk np.
+if(e.code == p){
+	(funkcja)
+}
